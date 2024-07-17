@@ -1,0 +1,26 @@
+1. Extract the WeCare_Project.rar file to C: drive (local drive).
+2. Open Command prompt and open WeCare folder in it.
+3. Then execute the following command:
+* To create env and scripts:
+virtualenv env
+* To redirect directory:
+Cd env/scripts
+* To activate the Scripts:
+Activate
+* Level down to main directory:
+cd ..
+cd ..
+* Then install Django package in the directory:
+pip install Django
+* Then to run the project execute the following command:
+python manage.py runserver
+After executing this command, a URL will pop up at the bottom. Copy the URL and paste it in the browser. Ex. http://127.0.0.1:8000/
+
+
+
+
+
+
+
+Installation Guide of WeCare Project
+

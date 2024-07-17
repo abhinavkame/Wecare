@@ -1,0 +1,211 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>About Us</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+	
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet">
+
+	<!-- CSS Libraries -->
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+	<link href="{% static 'lib/flaticon/font/flaticon.css' % }" rel="stylesheet">
+	<link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+	<link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' % }" rel="stylesheet">
+
+	<!-- Template Stylesheet -->
+	<link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<style>
+	body{
+	
+	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url("{% static 'images/aboutus.jpg' %}")no-repeat center fixed ;
+	background-size: cover;
+	
+}
+	.centered {
+  position: absolute;
+  
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+  </style>
+{% block body %}
+
+<body>
+	
+
+	{% if error == 'no' %}
+
+	<script type="text/javascript">
+
+		alert('LOGGED IN SUCCESSFULLY!');
+		window.location = ('{% url 'view_notes'  %}');
+
+	</script>
+
+	{% endif %}
+
+	{% if error == 'yes' %}
+
+	<script type="text/javascript">
+		alert('INVALID LOGIN PLEASE TRY AGAIN !');
+	</script>
+
+	{% endif %}
+	<br></br>
+
+	 <!-- Top Bar Start -->
+	 <div class="top-bar d-none d-md-block">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="top-bar-left">
+						<div class="text">
+							<i class="fa fa-phone-alt"></i>
+							<p>+91 123 456 7890</p>
+						</div>
+						<div class="text">
+							<i class="fa fa-envelope"></i>
+							<p>wecare@gmail.com</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="top-bar-right">
+						<div class="social">
+							<a href=""><i class="fab fa-twitter"></i></a>
+							<a href=""><i class="fab fa-facebook-f"></i></a>
+							<a href=""><i class="fab fa-linkedin-in"></i></a>
+							<a href=""><i class="fab fa-instagram"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Top Bar End -->
+	
+	
+	 <!-- Nav Bar Start -->
+	 <nav>
+		<div class="navbar navbar-expand-lg bg-dark navbar-dark">
+		  <div class="container-fluid">
+			  <a href="{% url 'home'  %}" class="navbar-brand">WeCare</a>
+			  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+				  <span class="navbar-toggler-icon"></span>
+			  </button>
+	
+			  <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+				  <div class="navbar-nav ml-auto">
+					  <a href="{% url 'home'  %}" class="nav-item nav-link ">Home</a>
+			
+					  <a href="{% url 'about'  %}" class="nav-item nav-link active">AboutUs</a>
+					  <a href="{% url 'faqs'  %}" class="nav-item nav-link">FAQs</a>
+					  
+						  <a href="{% url 'login'  %}" class="nav-item nav-link">Login</a>
+						  <a href="{% url 'signup'  %}" class="nav-item nav-link">Signup</a>
+						
+					  <a href="{% url 'contact'  %}" class="nav-item nav-link">Contact</a>
+				  </div>
+			  </div>
+		  </div>
+	  </div>
+	</nav>
+	<!-- Nav Bar End -->
+	<div class="right" style="position: absolute;
+    top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	bottom: 8px;">
+
+
+
+
+		<!-- About Start -->
+		<div class="about">
+			<div class="container" background color="" >
+				<div class="row align-items:right">
+					<div class="col-lg-6">
+						<div class="about-img" data-parallax="scroll"
+							data-image-src="{% static 'images/aboutus.jpg' %}"></div>
+					</div>
+					<div class="col-lg-6">
+						<div class="section-header">
+							<p style="font-family: 'Quicksand';color: #fdbe33">Learn About Us</p>
+							<h2  style="font-family: 'Quicksand';color:#fff" >We care for the people.</h2>
+						</div>
+						<div class="about-tab">
+							<ul class="nav nav-pills nav-justified">
+								<li class="nav-item">
+									<a style="font-family: 'Quicksand';color:#ffffff;" class="nav-link active" data-toggle="pill" href="#tab-content-1"><b>About</b></a>
+								</li>
+								<li class="nav-item">
+									<a style="font-family: 'Quicksand';color: #fff;" class="nav-link" data-toggle="pill" href="#tab-content-2"><b>Mission</b></a>
+								</li>
+								<li class="nav-item">
+									<a style="font-family: 'Quicksand';color: #ffffff;" class="nav-link" data-toggle="pill" href="#tab-content-3"><b>Vision</b></a>
+								</li>
+							</ul>
+
+							<div style="font-family: 'Quicksand';color: #ffffff;"class="tab-content">
+								<div id="tab-content-1" class="container tab-pane active">
+									<b> WeCare is a non-profitable organization. Our organization includes Food Donation,
+									Blood Donation, Clothes Donation. We are serving more than 10 cities in India which
+									makes a trustworthy orgaization.>
+								    </b>
+								</div>
+							<div style="font-family: 'Quicksand';color: #ffffff;"class="tab-content"></div>
+								<div id="tab-content-2" class="container tab-pane fade">
+								<b>Our mission and goal is to feed 10000 people each day and complete 1000 drives a
+									month.</b>
+								</div>
+							<div style="font-family: 'Quicksand';color: #ffffff;"class="tab-content"></div>
+								<div id="tab-content-3" class="container tab-pane fade">
+									<b>Simple really, beat global hunger and bring out the best of humanity using food as a
+									medium.The idea is to create self-sustained chapters across the world who will look
+									after their local community. And in the process, inspire people around us to give
+									back to those who need it most.</b>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- About End -->
+
+
+
+
+			
+		</form>
+
+		<!-- Back to top button -->
+		<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+		
+		<!-- JavaScript Libraries -->
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+		<script src="{ % static 'lib/easing/easing.min.js' % }"></script>
+		<script src="{ % static 'lib/owlcarousel/owl.carousel.min.js' % }"></script>
+		<script src="{ % static 'lib/waypoints/waypoints.min.js' % }"></script>
+		<script src="{ % static 'lib/counterup/counterup.min.js' % }"></script>
+		<script src="{ % static 'lib/parallax/parallax.min.js' % }"></script>
+
+
+		
+</body>
+{% endblock %}
+
+</html>

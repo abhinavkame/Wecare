@@ -1,0 +1,132 @@
+
+{% load static %}
+{% block body %}
+<script src="https://www.paypal.com/sdk/js?client-id=AYVSlQ5aSb4nUqH7ijY0W4uoXjf7ihXSx85SngcHseu3uqrnWAFgQSGxXGCaYVnOqKpC73tK9glaCIWO&currency=USD"></script>
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<title>donate fund</title>
+</head>
+<body>
+
+	<style>
+        .w3-container {
+            font-size: 14px;
+        }
+
+        .center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+    <!-- Nav Bar Start -->
+	<!-- <nav>
+		<div class="navbar navbar-expand-lg bg-dark navbar-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand">WeCare</a>
+				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+					<div class="navbar-nav ml-auto">
+						<a href="{% url 'upload_notes' %}" class="nav-item nav-link ">Donate Now</a>
+						<a href="{% url 'view_notes' %}" class="nav-item nav-link ">View my Donations</a>
+						<a href="{% url 'view_funds' %}" class="nav-item nav-link  ">View My Funds</a>
+						<a href="{% url 'donatefund' %}" class="nav-item nav-link active">Donate Funds</a>
+						<a href="{% url 'user_logout' %}" class="nav-item nav-link">Logout</a>
+						<div class="btn-group">
+							<button class="btn btn-warning dropdown-toggle" type="submit" data-toggle="dropdown" style="font-family: 'Quicksand';color:#ffffff">welcome
+								{{request.user.first_name}}</button>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="{% url 'user_profile' %}">Profile</a>
+								<a class="dropdown-item" href="{% url 'edit_profile' %}">Edit Profile</a>
+								<a class="dropdown-item" href="{% url 'change_pwd' %}">Change Password</a>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</nav> -->
+	<!-- Nav Bar End -->
+
+    <div class="center">
+        <h3 class="donate">
+            <div class="w3-card-4">
+
+                <header class="w3-container w3-blue">
+                    <h1>DONATE</h1>
+                </header>
+
+                <div class="w3-container">
+                    <p>Donate for a great cause. Be a hero.</p>
+                  </div>
+                   
+                    <!-- PAYPAL BUTTONS HERE  -->
+
+                    <div id="paypal-button-container"></div>
+                    <div>{{ donate.donatefund }}</div>
+                    <script src="https://www.paypal.com/sdk/js?client-id=AQmvZN2RiqSOq0D8C_t6LCq54qysE2EinBzQ37hbgj3duWkANRAaFk6WcR_k_HXHKRnJLlJGOwxHj3h3&currency=USD"></script>
+      
+                    <div id="smart-button-container">
+                      <div style="text-align: center;">
+                        <div id="paypal-button-container"></div>
+                      </div>
+                    </div>
+                  <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+                  <script>
+                    function initPayPalButton() {
+                      paypal.Buttons({
+                        style: {
+                          shape: 'rect',
+                          color: 'silver',
+                          layout: 'vertical',
+                          label: 'paypal',
+                          
+                        },
+                
+                        createOrder: function(data, actions) {
+                          return actions.order.create({
+                            purchase_units: [{"amount":{"currency_code":"USD","value":1}}]
+                          });
+                        },
+                
+                        onApprove: function(data, actions) {
+                          return actions.order.capture().then(function(orderData) {
+                            
+                            // Full available details
+                            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                
+                            // Show a success message within this page, e.g.
+                            const element = document.getElementById('paypal-button-container');
+                            element.innerHTML = '';
+                            element.innerHTML = '<h2>Thank you for your payment!</h2>';
+                            actions.redirect('thank_you.html');
+                            
+                          });
+                        },
+                
+                        onError: function(err) {
+                          console.log(err);
+                        }
+                      }).render('#paypal-button-container');
+                    }
+                    initPayPalButton();
+                  </script>
+
+                <footer class="w3-container w3-blue">
+                    <h5>&copy Professional Cipher</h5>
+                </footer>
+
+            </div>
+        </h3>
+
+    </div>
+</body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,137 @@
+
+{% load static %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="utf-8">
+		<title>Assign Status</title>
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	
+	
+		<!-- Favicon -->
+		<link href="img/favicon.ico" rel="icon">
+	
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet">
+	
+		<!-- CSS Libraries -->
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+		<link href="{% static 'lib/flaticon/font/flaticon.css' % }" rel="stylesheet">
+		<link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+		<link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' % }" rel="stylesheet">
+	
+		<!-- Template Stylesheet -->
+		<link href="{% static 'css/style.css' %}" rel="stylesheet">
+	</head>
+	<style>
+		body{
+		
+			background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("{% static 'images/Profile.jpg' %}")no-repeat center fixed ;
+			background-size: cover;
+			
+		}
+		.centered {
+			position: absolute;
+			text-align: center;
+	
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	</style>
+<body>
+	{%  if error == 'no'  %}
+
+	<script type="text/javascript">
+		alert('Status Updated SUCCESSFULLY!');
+		
+	</script>
+
+	{% endif %}
+
+	{%  if error == 'yes'  %}
+
+	<script type="text/javascript">
+		alert(' PLEASE TRY AGAIN !');
+	</script>
+
+	{% endif %}
+	 <!-- Top Bar Start -->
+	 <div class="top-bar d-none d-md-block">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="top-bar-left">
+						<div class="text">
+							<i class="fa fa-phone-alt"></i>
+							<p>+91 123 456 7890</p>
+						</div>
+						<div class="text">
+							<i class="fa fa-envelope"></i>
+							<p>wecare@gmail.com</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="top-bar-right">
+						<div class="social">
+							<a href=""><i class="fab fa-twitter"></i></a>
+							<a href=""><i class="fab fa-facebook-f"></i></a>
+							<a href=""><i class="fab fa-linkedin-in"></i></a>
+							<a href=""><i class="fab fa-instagram"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Top Bar End -->
+	
+	<!-- Nav Bar Start -->
+	<nav>
+		<div class="navbar navbar-expand-lg bg-dark navbar-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand">WeCare</a>
+				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+						<div class="btn-group">
+							<li class="nav-item">
+								<a class="nav-link active"  style="color: #fff;"href="{% url 'admin_home' %}">Home</a>
+							</li>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</nav>
+	<!-- Nav Bar End -->
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<div class="container">
+		<h6 style="font-size: 80px; text-align:center; color: #fff;"> Assign status</h6>
+		<br>
+		<form method="post"  style="font-size: 20px;font-family: 'Quicksand';color: #fdbe33">
+			{% csrf_token %}
+			<label>Donation Id</label>
+			<br></br>
+			<input type="text" value={{notes.id}} readonly>
+			<br></br>
+			<select class="form-control" name="status">
+				<option value="accepted">Accepted</option>
+				<option value="rejected">Rejected</option>
+				<option value="donated">donated</option>
+			</select>
+			<br>
+			<input type="submit" class="btn btn-warning mt-2" style="color: #fff;" value="submit">
+		</form>
+	</div>
+</body>
+
+</html>
+{% endblock %}

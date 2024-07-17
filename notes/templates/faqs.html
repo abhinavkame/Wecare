@@ -1,0 +1,296 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>FAQ's</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS Libraries -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="{% static 'lib/flaticon/font/flaticon.css' % }" rel="stylesheet">
+  <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' % }" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<style>
+  body{
+	
+  background: linear-gradient(rgba(0, 0, 0, 0.800), rgba(0, 0, 0, 0.800)),url("{% static 'images/Faqs.jfif' %}")no-repeat center fixed ;
+  background-size: cover;
+  
+}
+  .centered {
+    position: absolute;
+
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+{% block body %}
+
+<body>
+  
+
+  {% if error == 'no' %}
+
+  <script type="text/javascript">
+
+    alert('LOGGED IN SUCCESSFULLY!');
+    window.location = ('{% url 'view_notes'  %}');
+
+  </script>
+
+  {% endif %}
+
+  {% if error == 'yes' %}
+
+  <script type="text/javascript">
+    alert('INVALID LOGIN PLEASE TRY AGAIN !');
+  </script>
+
+  {% endif %}
+  <br></br>
+
+   <!-- Top Bar Start -->
+	 <div class="top-bar d-none d-md-block">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="top-bar-left">
+						<div class="text">
+							<i class="fa fa-phone-alt"></i>
+							<p>+91 123 456 7890</p>
+						</div>
+						<div class="text">
+							<i class="fa fa-envelope"></i>
+							<p>wecare@gmail.com</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="top-bar-right">
+						<div class="social">
+							<a href=""><i class="fab fa-twitter"></i></a>
+							<a href=""><i class="fab fa-facebook-f"></i></a>
+							<a href=""><i class="fab fa-linkedin-in"></i></a>
+							<a href=""><i class="fab fa-instagram"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Top Bar End -->
+
+  <!-- Nav Bar Start -->
+  <nav>
+    <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a href="{% url 'home'  %}" class="navbar-brand">WeCare</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+          <div class="navbar-nav ml-auto">
+            <a href="{% url 'home'  %}" class="nav-item nav-link ">Home</a>
+            <a href="{% url 'about'  %}" class="nav-item nav-link">AboutUs</a>
+            <a href="{% url 'faqs'  %}" class="nav-item nav-link active">FAQs</a>
+            <a href="{% url 'login'  %}" class="nav-item nav-link">Login</a>
+            <a href="{% url 'signup'  %}" class="nav-item nav-link">Signup</a>
+            <a href="{% url 'contact'  %}" class="nav-item nav-link">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="right" style="position: absolute;
+    top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	bottom: 8px;">
+
+
+
+
+    <!-- FAQ's Start -->
+    <div class="text-center">
+      <h2 class="mt-5 mb-5" style="font-family: 'Quicksand';color: #fdbe33">FAQ</h2>
+    </div>
+    <section class="container my-5" id="maincontent">
+      <section id="accordion">
+        <a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top"
+          aria-controls="faq-17" aria-expanded="false" data-toggle="collapse" href="#faq-17" role="button">
+          <div class="position-relative">
+            <h2 class="h4 m-0 pr-3" style="color: #fff;" >
+              What inspires you? Why?
+            </h2>
+            <div class="position-absolute top-0 right-0 h-100 d-flex align-items-center">
+              <i class="fa fa-plus"></i>
+            </div>
+          </div>
+        </a>
+        <div class="collapse" id="faq-17">
+          <div class="card card-body border-0 p-0">
+            <p>We are inspired by Lord Shiva, who is the biggest donor who does not refuse to give anything to any
+              petitioner. Because donation is the identity of India and charity should be such that one hand is donated
+              and the other hand does not get known.</p>
+
+          </div>
+        </div>
+
+        <a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top"
+          aria-controls="faq-18" aria-expanded="false" data-toggle="collapse" href="#faq-18" role="button">
+          <div class="position-relative">
+            <h2 class="h4 m-0 pr-3" style="color: #fff;">
+              Why did you start this organization? How has it grown or changed over time?
+            </h2>
+            <div class="position-absolute top-0 right-0 h-100 d-flex align-items-center">
+              <i class="fa fa-plus"></i>
+            </div>
+          </div>
+        </a>
+        <div class="collapse" id="faq-18">
+          <div class="card card-body border-0 p-0">
+            <p>We start a NGO because we want to have a better world around us. Contrary to normal belief that we start NGO to help others, I think we start NGO to help ourselves. Imagine a world where you are seeing people around you are sufferings without proper food or care and this makes you uncomfortable and then you decide to do something and start a NGO, raise funds, arrange resources etc. So all this you did because as a person you wanted to be happy. Others got benefitted by your act and now may have a chance for a better life.
+              Many times people just not realise this aspect.</p>
+            <p>
+            </p>
+          </div>
+        </div>
+
+        <a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary border-top"
+          aria-controls="faq-19" aria-expanded="false" data-toggle="collapse" href="#faq-19" role="button">
+          <div class="position-relative">
+            <h2 class="h4 m-0 pr-3" style="color: #fff;">
+              Who exactly/what services will my money go to?
+            </h2>
+            <div class="position-absolute top-0 right-0 h-100 d-flex align-items-center">
+              <i class="fa fa-plus"></i>
+            </div>
+          </div>
+        </a>
+        <div class="collapse" id="faq-19">
+          <div class="card card-body border-0 p-0">
+            <p>The funds contributed by donors and sponsors is used for the good causes by our NGO’s on various programs. We have been associated with this NGO since last few months and We can strongly recommend this NGO to everyone as its one the best leading NGO which is tirelessly working for the betterment and welfare of people. This NGO has started in July 2021 and since then it as achieved many awards and recognition's for their work and helped thousands of people. here are the ways through which our money get involved :
+              <ul>
+              <li>Sponsor an orphan child</li>
+              <li>Sponsor midday meals for poor elderly women</li>
+              <li>Monthly groceries for destitute women</li>
+              <li>Sponsor a child’s education</li>
+              <li>Day care centers for poor children</li>
+              <li>Women’s livelihood training</li>
+              <li>Covid-19 relief</li>
+              <li>Volunteer in any useful way</li>
+            </ul></p>
+            <p>
+            </p>
+          </div>
+        </div>
+
+        <a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary  border-top"
+          aria-controls="faq-20" aria-expanded="false" data-toggle="collapse" href="#faq-20" role="button">
+          <div class="position-relative">
+            <h2 class="h4 m-0 pr-3" style="color: #fff;">
+              What is the best email to reach you at?
+            </h2>
+            <div class="position-absolute top-0 right-0 h-100 d-flex align-items-center">
+              <i class="fa fa-plus"></i>
+            </div>
+          </div>
+        </a>
+        <div class="collapse" id="faq-20">
+          <div class="card card-body border-0 p-0">
+            <p>The best email for any inquiries is wecare@gmail.com!</p>
+            <p>
+            </p>
+          </div>
+        </div>
+
+        <a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary  border-top"
+          aria-controls="faq-21" aria-expanded="false" data-toggle="collapse" href="#faq-21" role="button">
+          <div class="position-relative">
+            <h2 class="h4 m-0 pr-3" style="color: #fff;">
+              Where can I read more about WeCare?
+            </h2>
+            <div class="position-absolute top-0 right-0 h-100 d-flex align-items-center">
+              <i class="fa fa-plus"></i>
+            </div>
+          </div>
+        </a>
+        <div class="collapse" id="faq-21" >
+          <div class="card card-body border-0 p-0" >
+            <p >You can visit our page<a href="https://about.php"> About US</a> to read more about WeCare.</p>
+          </div>
+        </div>
+
+        <a class="py-3 d-block h-100 w-100 position-relative z-index-1 pr-1 text-secondary  border-top"
+          aria-controls="faq-22" aria-expanded="false" data-toggle="collapse" href="#faq-22" role="button">
+          <div class="position-relative">
+            <h2 class="h4 m-0 pr-3" style="color: #fff;">
+              What is the best time to call?
+            </h2>
+            <div class="position-absolute top-0 right-0 h-100 d-flex align-items-center">
+              <i class="fa fa-plus"></i>
+            </div>
+          </div>
+        </a>
+        <div class="collapse" style="background-color: rgb(0,0, 0,0);" id="faq-22">
+          <div class="card card-body border-0 p-0">
+            <p>The best time to call is 24/7! We are always available to answer any questions. Contact no.-+91 12345 67890</p>
+            <p>
+            </p>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!-- FAQs End -->
+
+
+
+    <!-- Footer Start -->
+
+    <!-- Footer End -->
+
+          </form>
+
+          <!-- Back to top button -->
+          <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+          <!-- Pre Loader 
+	    <div id="loader" class="show">
+		 <div class="loader"></div>
+	    </div> -->
+
+          <!-- JavaScript Libraries -->
+          <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+          <script src="{ % static 'lib/easing/easing.min.js' % }"></script>
+          <script src="{ % static 'lib/owlcarousel/owl.carousel.min.js' % }"></script>
+          <script src="{ % static 'lib/waypoints/waypoints.min.js' % }"></script>
+          <script src="{ % static 'lib/counterup/counterup.min.js' % }"></script>
+          <script src="{ % static 'lib/parallax/parallax.min.js' % }"></script>
+
+          <!-- Contact Javascript File -->
+          <script src="{ % static 'mail/jqBootstrapValidation.min.js' % }"></script>
+          <script src="{ % static 'mail/contact.js' % }"></script>
+
+          <!-- Template Javascript -->
+          <script src="{ % static 'js/main.js' % }"></script>
+</body>
+{% endblock %}
+
+</html>
